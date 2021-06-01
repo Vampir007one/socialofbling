@@ -1,0 +1,1178 @@
+@font-face {
+  font-family: Muller; /* Имя шрифта */
+  font-style: italic;
+  src: url(../fonts/MullerRegularItalic.ttf); /* Путь к файлу со шрифтом */
+ }  
+body{
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(120.19deg, #E5E5E5 -11.6%, #FFFFFF 144.27%); */
+}
+
+#upbutton {
+  background: url("../img/top_btn.png") no-repeat top left;
+  height: 60px;
+  width: 60px;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  z-index: 999;
+}
+
+.login{
+  z-index: 999;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.slep_btn{
+  width: 106px;
+  
+font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
+
+color: #FFFFFF;
+  position: fixed;
+  z-index: 4;
+  left: 26px;
+  top: 844px;
+}
+
+/* Шапка */
+
+header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.logo img{
+    width: 168px;
+    height: 95px;
+    /* margin-left: 155px; */
+}
+
+.header_title{
+    width: 559px;
+    height: 48px;
+    margin-left: 39px;
+    margin-top: 25px;
+    margin-right: 313px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;  
+}
+
+
+.search{
+  margin-left: 36px; 
+  margin-top: 25px;
+    padding-left: 15px;
+    padding-right: 181px;
+}
+
+.src input{
+    width: 205px;
+    height: 48px;
+
+    position: absolute;
+    padding-left: 10px;
+
+
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+button{
+    position: relative;
+    background: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    left: 170px;
+    top: 12px;
+}
+
+.header_menu{
+    display: flex;
+    justify-content: center;
+}
+
+.header_menu ul{
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.header_menu li{
+padding-right: 55px;
+}
+
+/* Приветствие */
+
+.hello 
+{
+position: relative;
+background: url(../img/flag.gif) center no-repeat;
+-webkit-background-size: cover;
+background-size: cover;
+height: 795px;
+width: 100%;
+text-align: center;
+
+
+}
+.hello:after {
+    content: '';
+ position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+z-index: 2;
+}
+.inner
+{ 
+    width: 900px;
+    display: order;
+    z-index: 3;
+    color: #fff;
+    font-size: 48px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    position: absolute;
+
+}
+.inner h1
+{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 40px;
+    color: #FFFFFF;
+    margin-bottom: 150px;
+
+}
+.btn{
+
+width: 300px;
+
+
+border: 1px solid #C8C8C8;
+box-sizing: border-box;
+border-radius: 20px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 40px;
+
+text-align: center;
+padding: 10px 74px 10px 74px ;
+position: relative;
+z-index: 3;
+color: #fff;
+text-decoration: none;
+transition: .3s linear;
+}
+
+.btn:hover
+{
+    background-color: rgba(216, 216, 216, 0.33);
+    transition: .3s linear;
+    cursor: pointer;
+    box-shadow: 300px 0 0 0 rgba(0,0,0,.3) inset;
+
+}
+/* гимн */
+
+.gimn{
+    margin-top: 37px;
+    width: 100%;
+    height: 880px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gimn h1{
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 44px;
+
+
+color: #000000;
+}
+
+.gimn_text{
+    width: 339px;
+    margin-top: 117px;
+    margin-left: 920px;
+
+    font-family: Muller;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.flag_slepih{
+    margin-top: 273px;
+    margin-right: 785px;
+    position: absolute;
+}
+
+.flag_slepih img{
+    width: 500px;
+    height: 337.43px;
+}
+
+.audio{
+    position: absolute;
+    margin-right: 820px;
+    margin-top: 650px;
+    text-align: center;
+
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+
+color: #878787;
+}
+
+/* новости */
+
+.news{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    margin-top: 300px;
+}
+
+.block_news{
+width: 1108px;
+margin-top: 150px;
+}
+
+.news h1{
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 44px;
+
+
+color: #000000;
+}
+
+.news1
+{
+position: relative;
+background: url(../img/pop.jpg) center no-repeat;
+-webkit-background-size: cover;
+background-size: cover;
+width: 478px;
+height: 298px;
+/* margin-left: 155px; */
+/* margin-top: 150px; */
+width: 478px;
+height: 298px;
+float: left;
+}
+.news1:after {
+    content: '';
+ position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+z-index: 2;
+}
+
+
+
+.text_news_1 {
+  height: 298px;
+  width: 478px;
+    opacity: 0;
+    z-index: 3;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    
+    color: #FFFFFF;
+    padding-left: 5%;
+    position: absolute;
+}
+
+.text_news_1:hover{
+    opacity: 100%;
+    transition: 1s;
+}
+
+.news2
+{
+position: relative;
+background: url(../img/nagrada.jpg) center no-repeat;
+-webkit-background-size: cover;
+background-size: cover;
+width: 478px;
+height: 298px;
+margin-left: 15px;
+/* margin-top: 150px; */
+width: 300px;
+height: 298px;
+float: left;
+}
+
+.news2:after {
+    content: '';
+ position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+z-index: 2;
+}
+
+.text_news_2 {
+    opacity: 0;
+    width: 300px;
+    height: 298px;
+    display: order;
+    z-index: 3;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    
+    
+    color: #FFFFFF;
+    padding-left: 5%;
+    position: absolute;
+}
+
+.text_news_2:hover {
+    opacity: 100%;
+    transition: 1s;
+}
+
+.news3
+{
+position: relative;
+background: url(../img/igrauma.jpg) center no-repeat;
+-webkit-background-size: cover;
+background-size: cover;
+width: 478px;
+height: 298px;
+margin-left: 15px;
+/* margin-top: 150px; */
+width: 300px;
+height: 298px;
+float: left;
+}
+.news3:after {
+    content: '';
+ position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+z-index: 2;
+}
+
+.news4
+{
+position: relative;
+background: url(../img/teatr.jpg) center no-repeat;
+-webkit-background-size: cover;
+background-size: cover;
+width: 478px;
+height: 298px;
+/* margin-left: 155px; */
+margin-top: 15px;
+width: 300px;
+height: 298px;
+float: left;
+}
+
+.news4:after {
+    content: '';
+ position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+z-index: 2;
+}
+
+.news5
+{
+position: relative;
+background: url(../img/litra.jpg) center no-repeat;
+-webkit-background-size: cover;
+background-size: cover;
+width: 478px;
+height: 298px;
+margin-left: 15px;
+margin-top: 15px;
+width: 300px;
+height: 298px;
+float: left;
+}
+.news5:after {
+    content: '';
+ position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+z-index: 2;
+}
+
+.news6
+{
+position: relative;
+background: url(../img/fest.png) center no-repeat;
+-webkit-background-size: cover;
+background-size: cover;
+width: 478px;
+height: 298px;
+margin-left: 15px;
+margin-top: 15px;
+width: 478px;
+height: 298px;
+float: left;
+margin-bottom: 210px;
+}
+.news6:after {
+    content: '';
+ position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+z-index: 2;
+}
+/* наши видео */
+.video h1{
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 44px;
+margin-top: 243px;
+
+color: #000000;
+}
+
+.video{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.videos{
+    margin-top: 85px;
+    width: 1108px;
+}
+.video_1{
+    float: left;
+    margin-right: 44px;
+}
+.video_2{
+    float: left;
+}
+.video_3{
+    float: left;
+    margin-right: 44px;
+    margin-top: 44px;
+}
+.video_4{
+    float: left;
+    margin-top: 44px;
+}
+
+/* наши фото */
+/* User styles */
+/* @media screen and (min-width: 911px) {
+    .ant-carousel {
+      max-width: 810px;
+    }
+  }
+  
+  @media screen and (min-width: 641px) and (max-width: 910px) {
+    .ant-carousel {
+      max-width: 540px;
+    }
+  }
+  
+  @media screen and (max-width: 640px) {
+    .ant-carousel {
+      max-width: 270px;
+    }
+  }
+  
+  .ant-carousel {
+    margin: 50px auto auto;
+    padding-top: 10px;
+    border: 1px solid #ccd;
+    background-color: white;
+  }
+  
+  .ant-carousel-element {
+    width: 270px;
+    text-align: center;
+  }
+   */
+  /* General styles */
+  /* .ant-carousel {
+    width: auto;
+    position: relative;
+  }
+  
+  .ant-carousel-hider {
+    overflow: hidden;
+  }
+  
+  .ant-carousel-list {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .ant-carousel-element {
+    display: block;
+    flex: 0 0 auto;
+  }
+   */
+  /* Navigation item styles */
+  /* div.ant-carousel-arrow-left,
+  div.ant-carousel-arrow-right {
+    width: 22px;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.6;
+    z-index: 32;
+  }
+  
+  div.ant-carousel-arrow-left {
+    left: -40px;
+    top: 40%;
+    display: block;
+    background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
+  }
+  
+  div.ant-carousel-arrow-right {
+    right: -40px;
+    top: 40%;
+    display: block;
+    background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
+  }
+  
+  div.ant-carousel-arrow-left:hover {
+    opacity: 1.0;
+  }
+  
+  div.ant-carousel-arrow-right:hover {
+    opacity: 1.0;
+  }
+  
+  div.ant-carousel-dots {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    z-index: 30;
+    text-align: center;
+  }
+  
+  span.ant-dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    padding: 0;
+    display: inline-block;
+    background-color: #BBB;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+  * {box-sizing:border-box}
+
+  /* Slideshow container */
+  .slideshow-container {
+    width: 910px;
+    height: 410px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+      display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: 60px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  .btn1{
+    
+    width: 300px;
+    
+    
+    border: 1px solid #C8C8C8;
+    box-sizing: border-box;
+    border-radius: 20px;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 40px;
+    margin-left: 35%;
+    text-align: center;
+    padding: 10px 74px 10px 74px ;
+    position: relative;
+    z-index: 3;
+    color: #000;
+    text-decoration: none;
+    transition: .3s linear;
+
+    margin-bottom: 216px;
+    }
+    
+    .btn1:hover
+    {
+        background-color: rgba(216, 216, 216, 0.33);
+        transition: .3s linear;
+        cursor: pointer;
+        box-shadow: 300px 0 0 0 rgba(0,0,0,.3) inset;
+        
+    }
+.photo h1
+{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+  text-align: center;
+  font-size: 36px;
+  margin: 60px 0px 60px 0px;
+}
+
+.photo p{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+  text-align: center;
+  font-size: 36px;
+  margin: 60px 0px 60px 0px;
+}
+.photo 
+{
+  height: 800px;
+}
+/* карта */
+.map
+{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  text-align: center;
+
+}
+.map h1
+{
+  font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 44px;
+}
+
+.qwer
+{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  position: absolute;
+  bottom: -80px;
+  left: 200px;
+  margin-bottom: 50px;
+}
+.qwer2
+{
+    margin-bottom: 50px;
+  position: absolute;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  bottom: -80px;
+  right: 200px;
+}
+/* подвал */
+footer{
+    margin-top: 60px;
+    /* width: 1109px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.info{
+    float: left;
+    margin-right: 124px;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.info p{
+    
+}
+
+.social{
+    float: right;
+    width: 256px;
+    text-align: center;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+
+.social img{
+    margin-top: 5px;
+    width: 60px;
+    height: 60px;   
+}
+
+.cinz{
+    clear: both;
+    text-align: center;
+
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #3C3333;
+}
+/* Вспывающее окно */
+
+/* стилизация содержимого страницы */
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #292b2c;
+  background-color: #fff;
+}
+
+/* свойства модального окна по умолчанию */
+.modal {
+  position: fixed; /* фиксированное положение */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* цвет фона */
+  z-index: 1050;
+  opacity: 0; /* по умолчанию модальное окно прозрачно */
+  -webkit-transition: opacity 200ms ease-in;
+  -moz-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in; /* анимация перехода */
+  pointer-events: none; /* элемент невидим для событий мыши */
+  margin: 0;
+  padding: 0;
+}
+/* при отображении модального окно */
+.modal:target {
+  opacity: 1; /* делаем окно видимым */
+  pointer-events: auto; /* элемент видим для событий мыши */
+  overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 30px auto; /* для отображения модального окна по центру */
+  }
+}
+/* свойства для блока, содержащего контент модального окна */
+.modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #eef3f6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  outline: 0;
+}
+@media (min-width: 768px) {
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+/* свойства для заголовка модального окна */
+.modal-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #eceeef;
+  position: relative;
+}
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 auto;
+}
+
+/* свойства для кнопки "Закрыть" */
+.close {
+  height: 24px;
+  width: 24px;
+  float: right;
+  font-family: sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  text-decoration: none;
+  background-image: url(../../сайт/img/close.png);
+  background-size: 24px;
+  transition: 0.8s;
+  position: absolute;
+  right: 0;
+  margin: 10px 10px 0px 10px;
+}
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  background-image: url(../../сайт/img/close2.png);
+}
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 15px;
+  overflow: auto;
+}
+.modal-body input {
+  height: 50px;
+  width: 300px;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  display: flex;
+}
+
+.input {
+  text-align: center;
+}
+
+.input #save {
+  width: 210px;    
+    
+    border: 1px solid #C8C8C8;
+    box-sizing: border-box;
+    border-radius: 20px;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    padding: 10px 74px 10px 74px ;
+    position: relative;
+    z-index: 3;
+    color: #000;
+    text-decoration: none;
+    transition: .3s linear;
+}
+
+.input #save:hover {
+  background-color: rgba(216, 216, 216, 0.33);
+        transition: .3s linear;
+        cursor: pointer;
+        box-shadow: 300px 0 0 0 rgba(0,0,0,.3) inset;
+}
+
+/* Конец */
+
+@media (max-width: 1280px) {
+  /* Шапка */
+  .slep_btn{
+    top: 750px;
+  }
+  .header_title{
+    margin-right: 1px;
+  }
+
+  .search{
+    margin-left: 0px;
+    padding-left: 0;
+  }
+
+  /* гимн */
+  .flag_slepih{
+    margin-right: 520px;
+  }
+
+  .gimn_text{
+    margin-left: 690px;
+  }
+
+  .audio{
+    margin-right: 530px;
+  }
+  /* новости */
+
+  .block_news{
+    width: 1020px;  
+  }
+
+  .news1{
+    width: 390px;
+  }
+
+  .news6{
+    width: 390px;
+  }
+
+  .info{
+    margin-right: 84px;
+  }
+  }
+
+  @media (max-width: 375px) {
+
+    .login{
+      display: none;
+    }
+
+    header{
+      display: block;
+    }
+
+    .logo img {
+        width: 157px;
+        height: auto;
+        margin-left: 127px;
+        /* margin-right: auto; */
+        /* margin-left: ; */
+    }
+
+    .header_title{
+      display: none;
+    }
+
+    .header_menu ul{
+      display: none;
+    }
+
+    .search{
+    margin-left: 3%;
+    }
+
+    .src input{
+      width: 355px;
+    }
+
+    button{
+      left: 314px;
+    }
+
+    .hello{
+      background: none;
+    }
+  }
+  @media (max-width: 1440px) {
+    
+    .header_title{
+      margin-right: 250px;
+
+    }
+  }
+
+

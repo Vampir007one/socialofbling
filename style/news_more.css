@@ -1,0 +1,449 @@
+@font-face {
+    font-family: Muller; /* Имя шрифта */
+    font-style: italic;
+    src: url(../fonts/MullerRegularItalic.ttf); /* Путь к файлу со шрифтом */
+   }  
+body{
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(120.19deg, #E5E5E5 -11.6%, #FFFFFF 144.27%); */
+}
+
+li{
+    list-style: none;
+}
+
+#upbutton {
+    background: url("../img/top_btn.png") no-repeat top left;
+    height: 60px;
+    width: 60px;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    z-index: 999;
+  }
+  
+  .login{
+    z-index: 999;
+    margin-top: 25px;
+    margin-left: 40px;
+  }
+
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.slep_btn{
+  width: 106px;
+  
+font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
+
+color: #FFFFFF;
+  position: fixed;
+  z-index: 4;
+  left: 26px;
+  top: 844px;
+}
+
+/* Шапка */
+
+header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.logo img{
+    width: 168px;
+    height: 95px;
+    /* margin-left: 155px; */
+}
+
+.header_title{
+    width: 559px;
+    height: 48px;
+    margin-left: 39px;
+    margin-top: 25px;
+    margin-right: 313px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;  
+}
+
+
+.search{
+  margin-left: 36px; 
+  margin-top: 25px;
+    padding-left: 15px;
+    padding-right: 181px;
+}
+
+.src input{
+    width: 205px;
+    height: 48px;
+
+    position: absolute;
+    padding-left: 10px;
+
+
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+button{
+    position: relative;
+    background: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    left: 170px;
+    top: 12px;
+}
+
+.header_menu{
+    display: flex;
+    justify-content: center;
+}
+
+.header_menu ul{
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.header_menu li{
+padding-right: 55px;
+}
+/* новость */
+
+.block_news{
+    width: 1105px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    overflow: hidden;
+    
+}
+
+.block_news img{
+    width: 722px;
+    height: 346px;
+    object-fit: cover;
+    margin-bottom: 46px;
+}
+
+.block_news h1{
+    text-align: center;
+    margin-bottom: 33px;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+
+.block_news p{
+    font-family: Muller;
+    white-space: pre-line;
+font-style: italic;
+font-weight: normal;
+font-size: 24px;
+line-height: 24px;
+
+color: #000000;
+
+}
+/* подвал */
+footer{
+    margin-top: 60px;
+    /* width: 1109px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.info{
+    float: left;
+    margin-right: 124px;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.info p{
+    
+}
+
+.social{
+    float: right;
+    width: 256px;
+    text-align: center;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+
+.social img{
+    margin-top: 5px;
+    width: 60px;
+    height: 60px;   
+}
+
+.cinz{
+    clear: both;
+    text-align: center;
+
+    font-family: muller;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #3C3333;
+}
+/* Вспывающее окно */
+
+/* стилизация содержимого страницы */
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #292b2c;
+    background-color: #fff;
+  }
+  
+  /* свойства модального окна по умолчанию */
+  .modal {
+    position: fixed; /* фиксированное положение */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* цвет фона */
+    z-index: 1050;
+    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+  }
+  /* при отображении модального окно */
+  .modal:target {
+    opacity: 1; /* делаем окно видимым */
+    pointer-events: auto; /* элемент видим для событий мыши */
+    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+  }
+  /* ширина модального окна и его отступы от экрана */
+  .modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+  }
+  @media (min-width: 576px) {
+    .modal-dialog {
+      max-width: 500px;
+      margin: 30px auto; /* для отображения модального окна по центру */
+    }
+  }
+  /* свойства для блока, содержащего контент модального окна */
+  .modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #eef3f6;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    outline: 0;
+  }
+  @media (min-width: 768px) {
+    .modal-content {
+      -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+  }
+  /* свойства для заголовка модального окна */
+  .modal-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eceeef;
+    position: relative;
+  }
+  .modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 auto;
+  }
+  
+  /* свойства для кнопки "Закрыть" */
+  .close {
+    height: 24px;
+    width: 24px;
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    text-decoration: none;
+    background-image: url(../../сайт/img/close.png);
+    background-size: 24px;
+    transition: 0.8s;
+    position: absolute;
+    right: 0;
+    margin: 10px 10px 0px 10px;
+  }
+  /* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+  .close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    background-image: url(../../сайт/img/close2.png);
+  }
+  /* свойства для блока, содержащего основное содержимое окна */
+  .modal-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
+  }
+  .modal-body input {
+    height: 50px;
+    width: 300px;
+    margin: 0px auto;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    display: flex;
+  }
+  
+  .input {
+    text-align: center;
+  }
+  
+  .input #save {
+    width: 210px;    
+      
+      border: 1px solid #C8C8C8;
+      box-sizing: border-box;
+      border-radius: 20px;
+      
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      padding: 10px 74px 10px 74px ;
+      position: relative;
+      z-index: 3;
+      color: #000;
+      text-decoration: none;
+      transition: .3s linear;
+  
+  
+  }
+  
+  .input #save:hover {
+    background-color: rgba(216, 216, 216, 0.33);
+          transition: .3s linear;
+          cursor: pointer;
+          box-shadow: 300px 0 0 0 rgba(0,0,0,.3) inset;
+  }
+  
+  /* Конец */
+  @media (max-width: 1280px) {
+    /* Шапка */
+    .slep_btn{
+      top: 750px;
+    }
+    .header_title{
+      margin-right: 1px;
+    }
+  
+    .search{
+      margin-left: 0px;
+      padding-left: 0;
+    }
+  
+    .info{
+      margin-right: 84px;
+    }
+    }
