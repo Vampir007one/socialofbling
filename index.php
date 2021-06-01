@@ -1,10 +1,13 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../сайт/img/axialisiconworkshop_2938.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/axialisiconworkshop_2938.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
         <script src="script/script.js"></script>
         <!-- <script src="https://code.jquery.com/jquery-git.min.js"></script> -->
@@ -40,7 +43,16 @@
             </form>
         </div>
         <div class="login">
-            <a href="#login"><img src="img/admin.png" alt=""></a>
+            <?php
+                if(isset($_SESSION['login']))
+                {
+                    echo '<a style="align-items: center" href="logout.php">Выход</a>';
+                }
+                else
+                {
+                    echo '<a href="#login"><img src="img/admin.png" alt=""></a>';
+                }
+            ?>
         </div>
     </header>
     <div class="header_menu">
@@ -254,11 +266,39 @@
               <a href="#close" title="Close" class="close">
               </a>
             </div>
-            <div class="modal-body">    
+            <div class="modal-body">
               <div class="input">
-                <form action="">
-                  <input type="text" id="name" name="name" placeholder="Логин" required>
-                  <input type="password" id="patronymic" name="patronymic" placeholder="Пароль" required>
+                <form action="" method="post">
+                  <input type="text" id="name" name="login" placeholder="Логин" required>
+                  <input type="password" id="patronymic" name="pwd" placeholder="Пароль" required>
+                    <?php
+//                    connect db
+                        include ('connect.php');
+//                        check isset fields
+                        if(isset($_POST['login']) && isset($_POST['pwd']))
+                        {
+//                            check what field is fill
+                            if($_POST['login'] != '' && $_POST['pwd'] != '')
+                            {
+////                                queries to db
+                                $getUser = $db->query("SELECT * FROM `users` WHERE `login` = '$_POST[login]'");
+                                $user = mysqli_fetch_array($getUser);
+////                              check passwords
+                                if($user['password'] == $_POST['pwd'])
+                                {
+                                    $_SESSION['username'] = $user['username'];
+                                    $_SESSION['login'] = $user['login'];
+                                    echo "Вы авторизированы. <br> Добро пожаловать, <b>{$user['username']}</b>";
+                                    echo "<script>location.href='/';</script>";
+
+                                }
+                                else
+                                {
+                                    echo "Что-то не так, мы вас не узнаём!";
+                                }
+                            }
+                        }
+                    ?>
                   <input type="submit" id="save" value="Войти">
                 </form>
               </div>
@@ -286,8 +326,8 @@
             </div>
             <div class="social">
                 <p style="margin: 0;">Обратная связь:</p>
-                <a href="https://vk.com/public84382652"><img src="../сайт/img/social/VK Circled.png" alt=""></a>
-                <a href="mailto:tatyana-koroleva-1976@mail.ru"><img src="../сайт/img/social/Email.png" alt=""></a>
+                <a href="https://vk.com/public84382652"><img src="/img/social/VK Circled.png" alt=""></a>
+                <a href="mailto:tatyana-koroleva-1976@mail.ru"><img src="/img/social/Email.png" alt=""></a>
             </div>
             <div class="cinz">© 1925-2021 «Всероссийское общество слепых Тольяттинское отделение»</div>
         </div>

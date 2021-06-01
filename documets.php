@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../сайт/img/Logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/documents.css">
     <script src="script/script.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-git.min.js"></script> -->
@@ -566,8 +566,8 @@
             </div>
             <div class="social">
                 <p style="margin: 0;">Обратная связь:</p>
-                <a href="https://vk.com/public84382652"><img src="../сайт/img/social/VK Circled.png" alt=""></a>
-                <a href="mailto:tatyana-koroleva-1976@mail.ru"><img src="../сайт/img/social/Email.png" alt=""></a>
+                <a href="https://vk.com/public84382652"><img src="/img/social/VK Circled.png" alt=""></a>
+                <a href="mailto:tatyana-koroleva-1976@mail.ru"><img src="/img/social/Email.png" alt=""></a>
             </div>
             <div class="cinz">© 1925-2021 «Всероссийское общество слепых Тольяттинское отделение»</div>
         </div>
