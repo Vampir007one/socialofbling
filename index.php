@@ -20,7 +20,7 @@
 <body>
     <!-- кнопка "вверх" -->
     <a id="upbutton" href="index.php" onclick="smoothJumpUp();  return false;">
-        <img src="/images/up.png" alt="">
+        <img src="/img/up.png" alt="">
     </a>
     <!-- кнопка для слабовидящих -->
     <div class="slep_btn">
@@ -56,13 +56,7 @@
         </div>
     </header>
     <div class="header_menu">
-        <ul>
-            <li><a href="index.php">Главная</a></li>
-            <li><a href="about_organisation.php">Об организации</a></li>
-            <li><a href="all_news.php">Новости</a></li>
-            <li><a href="documets.php">Документы</a></li>
-            <li><a href="contact.php">Контакты</a></li>
-        </ul>
+        <?php include('menu.php');?>
     </div>
     <!-- приветствие -->
     <div class="hello">
@@ -257,55 +251,8 @@
           </div>
       </div>
       <script src="script/JavaScript.js"></script>
-      <!-- Модальное окно входа -->
-      <div id="login" class="modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-      
-              <a href="#close" title="Close" class="close">
-              </a>
-            </div>
-            <div class="modal-body">
-              <div class="input">
-                <form action="" method="post">
-                  <input type="text" id="name" name="login" placeholder="Логин" required>
-                  <input type="password" id="patronymic" name="pwd" placeholder="Пароль" required>
-                    <?php
-//                    connect db
-                        include ('connect.php');
-//                        check isset fields
-                        if(isset($_POST['login']) && isset($_POST['pwd']))
-                        {
-//                            check what field is fill
-                            if($_POST['login'] != '' && $_POST['pwd'] != '')
-                            {
-////                                queries to db
-                                $getUser = $db->query("SELECT * FROM `users` WHERE `login` = '$_POST[login]'");
-                                $user = mysqli_fetch_array($getUser);
-////                              check passwords
-                                if($user['password'] == $_POST['pwd'])
-                                {
-                                    $_SESSION['username'] = $user['username'];
-                                    $_SESSION['login'] = $user['login'];
-                                    echo "Вы авторизированы. <br> Добро пожаловать, <b>{$user['username']}</b>";
-                                    echo "<script>location.href='/';</script>";
-
-                                }
-                                else
-                                {
-                                    echo "Что-то не так, мы вас не узнаём!";
-                                }
-                            }
-                        }
-                    ?>
-                  <input type="submit" id="save" value="Войти">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!--  модальное окно  -->
+    <?php include('authorization.php')?>
     <!-- подвал -->
     <footer >
         <div class="content">

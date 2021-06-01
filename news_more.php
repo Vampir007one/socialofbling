@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style/news_more.css">
+    <link rel="stylesheet" href="/style/news_more.css">
     <script src="script/script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
@@ -40,13 +41,7 @@
         </div>
     </header>
     <div class="header_menu">
-        <ul>
-            <li><a href="index.php">Главная</a></li>
-            <li><a href="about_organisation.php">Об организации</a></li>
-            <li><a href="all_news.php">Новости</a></li>
-            <li><a href="documets.php  ">Документы</a></li>
-            <li><a href="contact.php">Контакты</a></li>
-        </ul>
+        <?php include('menu.php');?>
     </div>
     <!-- новость -->
     <div class="block_news">
@@ -90,27 +85,8 @@
             </div>
             <div class="cinz">© 1925-2021 «Всероссийское общество слепых Тольяттинское отделение»</div>
         </div>
-        <!-- Модальное окно входа -->
-      <div id="login" class="modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-      
-              <a href="#close" title="Close" class="close">
-              </a>
-            </div>
-            <div class="modal-body">    
-              <div class="input">
-                <form action="">
-                  <input type="text" id="name" name="name" placeholder="Логин" required>
-                  <input type="password" id="patronymic" name="patronymic" placeholder="Пароль" required>
-                  <input type="submit" id="save" value="Войти">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <!--  модальное окно  -->
+        <?php include('authorization.php')?>
     </footer>
 </body>
 </html>

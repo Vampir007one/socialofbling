@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -36,8 +37,17 @@
             </form>
         </div>
         <div class="login">
-          <a href="#login"><img src="img/admin.png" alt=""></a>
-      </div>
+            <?php
+            if(isset($_SESSION['login']))
+            {
+                echo '<a style="align-items: center" href="logout.php">Выход</a>';
+            }
+            else
+            {
+                echo '<a href="#login"><img src="img/admin.png" alt=""></a>';
+            }
+            ?>
+        </div>
     </header>
     <div class="header_menu">
         <ul>
@@ -107,38 +117,13 @@
           </div>
       </div>
       <script src="script/JavaScript.js"></script>
-      <!-- Модальное окно входа -->
-      <div id="login" class="modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-      
-              <a href="#close" title="Close" class="close">
-              </a>
-            </div>
-            <div class="modal-body">    
-              <div class="input">
-                <form action="">
-                  <input type="text" id="name" name="name" placeholder="Логин" required>
-                  <input type="password" id="patronymic" name="patronymic" placeholder="Пароль" required>
-                  <input type="submit" id="save" value="Войти">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <!--  модальное окно  -->
+        <?php include('authorization.php')?>
     <!-- подвал -->
     <footer >
         <div class="content">
             <div class="header_menu">
-                <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Об организации</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Документы</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
+                <?php include('menu.php');?>
             </div>
             <div class="info">
                 <p style="margin: 0; margin-bottom: 10px;">Всероссийское общество слепых г. Тольятти:</p>

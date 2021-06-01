@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style/about_organisation.css">
+    <link rel="stylesheet" href="/style/about_organisation.css">
     <script src="script/script.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -37,7 +38,16 @@
             </form>
         </div>
         <div class="login">
-            <a href="#login"><img src="img/admin.png" alt=""></a>
+            <?php
+            if(isset($_SESSION['login']))
+            {
+                echo '<a style="align-items: center" href="logout.php">Выход</a>';
+            }
+            else
+            {
+                echo '<a href="#login"><img src="img/admin.png" alt=""></a>';
+            }
+            ?>
         </div>
     </header>
     <div class="header_menu">
@@ -144,38 +154,13 @@
                 <img src="img/6.jpg" alt="">
         </div>
     </div>
-    <!-- Модальное окно входа -->
-    <div id="login" class="modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-      
-              <a href="#close" title="Close" class="close">
-              </a>
-            </div>
-            <div class="modal-body">    
-              <div class="input">
-                <form action="">
-                  <input type="text" id="name" name="name" placeholder="Логин" required>
-                  <input type="password" id="patronymic" name="patronymic" placeholder="Пароль" required>
-                  <input type="submit" id="save" value="Войти">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!--  модальное окно  -->
+    <?php include('authorization.php')?>
     <!-- подвал -->
     <footer >
         <div class="content">
             <div class="header_menu">
-                <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Об организации</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Документы</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
+                <?php include('menu.php');?>
             </div>
             <div class="info">
                 <p style="margin: 0; margin-bottom: 10px;"><b>Всероссийское общество слепых г. Тольятти:</b></p>
