@@ -257,13 +257,7 @@
     <footer >
         <div class="content">
             <div class="header_menu">
-                <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Об организации</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Документы</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
+                <?php include('menu.php');?>
             </div>
             <div class="info">
                 <p style="margin: 0; margin-bottom: 10px;"><b>Всероссийское общество слепых г. Тольятти:</b></p>
