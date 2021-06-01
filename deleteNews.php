@@ -18,7 +18,7 @@
         <!-- <script src="https://code.jquery.com/jquery-git.min.js"></script> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Добавление новостей</title>
+    <title>Удаление новостей</title>
     <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
     <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
 </head>
@@ -63,55 +63,38 @@
     <div class="header_menu">
         <?php include('menu.php');?>
     </div>
-    <div style="width: 100%; min-height: 500px; display: flex; justify-content: center; align-items: center;">
-        <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-flow: column; width: 50%">
-            <input type="text" name="title" id="" placeholder="Введите название новости" style="margin-top: 10px; padding: 10px;">
-            <input type="text" name="desc" id="" placeholder="Введите описание новости" style="margin-top: 10px; padding: 10px;">
-            <textarea name="text" id="" cols="30" rows="10" placeholder="Введите текст новости" style="margin-top: 10px; padding: 10px;"></textarea>
-            <input type="file" name="picture" id="" style="margin-top: 10px; padding: 10px;">
-            <input type="submit" value="Добавить новость" style="margin-top: 10px; padding: 10px;">
+    <div style="width: 100%; min-height: 500px; display: flex; justify-content: center; align-items: center; flex-flow: column">
+        <h2>Чтобы удалить новость выберите её из списка ниже, и нажмите кнопку "Удалить новость"</h2>
+        <form action="" method="post" style="display: flex; flex-flow: column">
+        <select name="selector" id="" style="padding: 10px">
+            <option value="0">Новость не выбрана</option>
             <?php
-            if(isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['text']) && isset($_FILES['picture']['name']))
-            {
-                if($_POST['title'] != '' && $_POST['desc'] != '' && $_POST['text'] != '' && $_FILES['picture']['name'] != '')
+                $newQuery = $db ->query("SELECT * FROM `news` ORDER BY `news`.`id` DESC");
+                $news = mysqli_fetch_array($newQuery);
+                do
                 {
-                    if($_FILES['picture']['type'] == 'image/jpg' || $_FILES['picture']['type'] == 'image/jpeg' || $_FILES['picture']['type'] == 'image/png')
+print <<<HERE
+            <option value="$news[id]">$news[title]</option>
+HERE;
+                }
+                    while ($news = mysqli_fetch_array($newQuery));
+            ?>
+        </select>
+        <input type="submit" value="Удалить новость" style="padding: 10px; margin-top: 10px;">
+        <?php
+            if(isset($_POST['selector']))
+            {
+                if($_POST['selector'] != 0)
+                {
+                    $deleteNews = $db -> query("DELETE FROM `news` WHERE `id` = '$_POST[selector]'");
+                    if($deleteNews)
                     {
-                        $uploads_dir = '/uploads';
-                        $tmp_name = $_FILES["picture"]["tmp_name"];
-                        $name = basename($_FILES["picture"]["name"]);
-                        $uploaded = move_uploaded_file($_FILES['picture']['tmp_name'], 'uploads/'.$_FILES['picture']['name']);
-                        $pathFile = "uploads/". $_FILES['picture']['name'];
-                        if($uploaded)
-                        {
-                            $uploadToDb = $db ->query("
-                                INSERT INTO `news`(
-                                `title`,
-                                `description`,
-                                `text`,
-                                `path_picture`
-                            )
-                            VALUES(
-                                '$_POST[title]',
-                                '$_POST[desc]',
-                                '$_POST[text]',
-                                '$pathFile'
-                            )");
-                            if($uploadToDb)
-                            {
-                                echo "Новость успешно опубликована";
-                            }
-                            else
-                            {
-                                echo "Что-то пошло не так";
-                            }
-                        }
+                        echo "Новость успешно удалена";
                     }
                 }
             }
-            ?>
+        ?>
         </form>
-
     </div>
     <!--  модальное окно  -->
     <?php include('authorization.php')?>

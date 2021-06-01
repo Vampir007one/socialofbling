@@ -18,7 +18,7 @@
         <!-- <script src="https://code.jquery.com/jquery-git.min.js"></script> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Добавление новостей</title>
+    <title>Редактирование новости</title>
     <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
     <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
 </head>
@@ -61,13 +61,17 @@
         </div>
     </header>
     <div class="header_menu">
-        <?php include('menu.php');?>
+        <?php
+            include('menu.php');
+            $newsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$_GET[id]'");
+            $news = mysqli_fetch_array($newsQuery);
+        ?>
     </div>
     <div style="width: 100%; min-height: 500px; display: flex; justify-content: center; align-items: center;">
         <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-flow: column; width: 50%">
-            <input type="text" name="title" id="" placeholder="Введите название новости" style="margin-top: 10px; padding: 10px;">
-            <input type="text" name="desc" id="" placeholder="Введите описание новости" style="margin-top: 10px; padding: 10px;">
-            <textarea name="text" id="" cols="30" rows="10" placeholder="Введите текст новости" style="margin-top: 10px; padding: 10px;"></textarea>
+            <input type="text" name="title" id=""  style="margin-top: 10px; padding: 10px;" value="<?= $news['title']?>">
+            <input type="text" name="desc" id=""  style="margin-top: 10px; padding: 10px;" value="<?= $news['description']?>">
+            <textarea name="text" id="" cols="30" rows="10"  style="margin-top: 10px; padding: 10px;"><?= $news['text']?></textarea>
             <input type="file" name="picture" id="" style="margin-top: 10px; padding: 10px;">
             <input type="submit" value="Добавить новость" style="margin-top: 10px; padding: 10px;">
             <?php
@@ -85,21 +89,18 @@
                         if($uploaded)
                         {
                             $uploadToDb = $db ->query("
-                                INSERT INTO `news`(
-                                `title`,
-                                `description`,
-                                `text`,
-                                `path_picture`
-                            )
-                            VALUES(
-                                '$_POST[title]',
-                                '$_POST[desc]',
-                                '$_POST[text]',
-                                '$pathFile'
-                            )");
+                                UPDATE
+                                `news`
+                                SET
+                                `title` = '$_POST[title]',
+                                `description` = '$_POST[desc]',
+                                `text` = '$_POST[text]',
+                                `path_picture` = '$pathFile'
+                                WHERE
+                                `id` = '$news[id]'");
                             if($uploadToDb)
                             {
-                                echo "Новость успешно опубликована";
+                                echo "Новость успешно изменена";
                             }
                             else
                             {

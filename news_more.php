@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php
+    session_start();
+    include('connect.php');
+    $getNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$_GET[id]'");
+    $newsOne = mysqli_fetch_array($getNewsQuery);
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,7 +15,7 @@
     <script src="script/script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Общероссийское общество слепых</title>
+    <title><?php echo $newsOne['title']?></title>
     <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
     <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
 </head>
@@ -45,9 +50,7 @@
     </div>
     <!-- новость -->
     <?php
-        include('connect.php');
-        $getNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$_GET[id]'");
-        $newsOne = mysqli_fetch_array($getNewsQuery);
+
 print <<<HERE
         <div class="block_news">
             <h1>$newsOne[title]</h1>

@@ -10,7 +10,7 @@
     <script src="script/script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Общероссийское общество слепых</title>
+    <title>Новости</title>
     <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
     <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
 </head>
@@ -59,8 +59,8 @@
             if(isset($_SESSION['login']))
             {
                 echo '<h4 style="display: flex; justify-content: center;"><a href="addNews.php">Добавить новость</a></h4>';
-                echo '<h4 style="display: flex; justify-content: center;"><a href="addNews.php">Изменить новость</a></h4>';
-                echo '<h4 style="display: flex; justify-content: center;"><a href="addNews.php">Удалить новость</a></h4>';
+                echo '<h4 style="display: flex; justify-content: center;"><a href="editNewsMenu.php">Изменить новость</a></h4>';
+                echo '<h4 style="display: flex; justify-content: center;"><a href="deleteNews.php">Удалить новость</a></h4>';
             }
         ?>
 <!--        display news-->
