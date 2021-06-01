@@ -80,8 +80,8 @@
             </div>
             <div class="social">
                 <p style="margin: 0;">Обратная связь:</p>
-                <a href="https://vk.com/public84382652"><img src="../сайт/img/social/VK Circled.png" alt=""></a>
-                <a href="mailto:tatyana-koroleva-1976@mail.ru"><img src="../сайт/img/social/Email.png" alt=""></a>
+                <a href="https://vk.com/public84382652"><img src="/img/social/VK Circled.png" alt=""></a>
+                <a href="mailto:tatyana-koroleva-1976@mail.ru"><img src="/img/social/Email.png" alt=""></a>
             </div>
             <div class="cinz">© 1925-2021 «Всероссийское общество слепых Тольяттинское отделение»</div>
         </div>
