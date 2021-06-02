@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include ("connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -119,46 +120,71 @@
     <!-- новости -->
     <div class="news">
         <h1>ВОС в центре событий</h1>
-        <div class="block_news"> 
-            <a href="#">
-                <div class="news1">
+        <?php
+            $getId = $db -> query("SELECT `id` FROM `news` ORDER BY `id` desc");
+            $id = mysqli_fetch_array($getId);
+            $mass[] = '';
+            do
+            {
+                array_push($mass, $id['id']);
+            }
+                while($id = mysqli_fetch_array($getId));
+
+            ?>
+        <div class="block_news">
+            <?php
+                $firstNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$mass[1]'");
+                $firstNews = mysqli_fetch_array($firstNewsQuery);
+                $SecondNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$mass[2]'");
+                $SecondNews = mysqli_fetch_array($SecondNewsQuery);
+                $ThirdNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$mass[3]'");
+                $ThirdNews = mysqli_fetch_array($ThirdNewsQuery);
+                $FourthNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$mass[4]'");
+                $FourthNews = mysqli_fetch_array($FourthNewsQuery);
+                $FifthNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$mass[5]'");
+                $FifthNews = mysqli_fetch_array($FifthNewsQuery);
+                $SixthNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$mass[6]'");
+                $SixthNews = mysqli_fetch_array($SixthNewsQuery);
+            ?>
+            <a href="news_more.php?id=<?php echo $firstNews['id']?>">
+                <div class="news1" style="background: url(<?php echo $firstNews['path_picture']?>) center no-repeat; background-size: cover;">
                     <div class="text_news_1">
-                        <p>ПАСХА СВЕТЛАЯ</p>
+                        <p><?php echo $firstNews['title']?></p>
                     </div>
                 </div>
             </a>
-            <a href="">
-                <div class="news2">
+            <a href="news_more.php?id=<?php echo $SecondNews['id']?>">
+                <div class="news2" style="background: url(<?php echo $SecondNews['path_picture']?>) center no-repeat; background-size: cover;">
                     <div class="text_news_2">
-                        <p>САМЫЕ ТАЛАНТЛИВЫЕ</p>
+                        <p><?php echo $SecondNews['title']?></p>
                     </div>
                 </div>
             </a>
-            <a href="">
-                <div class="news3">
+            <a href="news_more.php?id=<?php echo $ThirdNews['id']?>">
+                <div class="news3" style="background: url(<?php echo $ThirdNews['path_picture']?>) center no-repeat; background-size: cover;">
                     <div class="text_news_2">
-                        <p>ИГРА УМА</p>
+                        <p><?php echo $ThirdNews['title']?></p>
                     </div>
                 </div>
             </a>
-            <a href="">
-                <div class="news4">
+            <a href="news_more.php?id=<?php echo $FourthNews['id']?>">
+                <div class="news4" style="background: url(<?php echo $FourthNews['path_picture']?>) center no-repeat; background-size: cover;">
                     <div class="text_news_2">
-                        <p>ИГРА УМА</p>
+                        <p><?php echo $FourthNews['title']?></p>
                     </div>
                 </div>
             </a>
-            <a href="">
-                <div class="news5">
+            <a href="news_more.php?id=<?php echo $FifthNews['id']?>">
+                <div class="news5" style="background: url(<?php echo $FifthNews['path_picture']?>) center no-repeat; background-size: cover;">
                     <div class="text_news_2 ">
-                        <p>Литературный Фестиваль Поволжья </p>
+                        <p><?php echo $FifthNews['title']?></p>
                     </div>
                 </div>
             </a>
-            <a href="">
-                <div class="news6">
+            <a href="news_more.php?id=<?php echo $SixthNews['id']?>">
+                <div class="news6" style="background: url(<?php echo $SixthNews['path_picture']?>) center no-repeat; background-size: cover;">
                     <div class="text_news_1">
-                        <p>Медовый, яблочный, ореховый спасы</p>
+                        <p><?php echo $SixthNews['title']?></p>
                     </div>
                 </div>
             </a>
