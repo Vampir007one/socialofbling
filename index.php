@@ -129,8 +129,7 @@
                 array_push($mass, $id['id']);
             }
                 while($id = mysqli_fetch_array($getId));
-
-            ?>
+        ?>
         <div class="block_news">
             <?php
                 $firstNewsQuery = $db -> query("SELECT * FROM `news` WHERE `id` = '$mass[1]'");
@@ -197,41 +196,31 @@
         <div class="slideshow-container">
           <h1>Наши фотографии</h1>
           <!-- Full-width images with number and caption text -->
-          <div class="mySlides fade">
-            <img src="./img/1.jpg" style="max-width:100%;">
-          </div>
-        
-          <div class="mySlides fade">
-            <img src="./img/2.jpg" style="max-width:100%;">
-          </div>
-        
-          <div class="mySlides fade">
-            <img src="./img/3.jpg" style="max-width:100%;">
-          </div>
-        
-          <div class="mySlides fade">
-            <img src="./img/4.jpg" style="max-width:100%;">
-          </div>
-        
-          <div class="mySlides fade">
-            <img src="./img/5.jpg" style="max-width:100%;">
-          </div>
-        
-          <div class="mySlides fade">
-            <img src="./img/6.jpg" style="width:100%;">
-          </div>
-        
-          <div class="mySlides fade">
-            <img src="./img/8.jpg" style="max-width:100% ;">
-          </div>
-        
-          <div class="mySlides fade">
-            <img src="./img/9.jpg" style="max-width:100%;">
-          </div>
-        
+            <?php
+                $getpictureQ = $db -> query("SELECT * FROM `pictureonslide`");
+                $pictureSlide = mysqli_fetch_array($getpictureQ);
+                do
+                {
+print <<<HERE
+                <div class="mySlides fade">
+                    <img src="$pictureSlide[path_picture]" style="max-width:100%;">
+                </div>
+HERE;
+                }
+                while ($pictureSlide = mysqli_fetch_array($getpictureQ));
+            ?>
           <!-- Next and previous buttons -->
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <?php
+                if(isset($_SESSION['login']))
+                {
+print <<<HERE
+                    <h3 style="text-align: center"><a href="picture_cp.php">Перейти в панель управления фотографиями</a></h3>
+HERE;
+
+                }
+            ?>
           <p>Больше впечатлений в нашей группе в вк</p>
         <a href="https://vk.com/albums-84382652"class="btn1">Узнать больше</a>
         </div>
@@ -241,19 +230,45 @@
     <div class="video">
         <h1>Наши видео</h1>
         <div class="videos">
+            <?php
+                $getVideoId = $db -> query("SELECT `id` FROM `videos`");
+                $videoId = mysqli_fetch_array($getVideoId);
+                $videoMass[] = '';
+                do
+                {
+                    array_push($videoMass, $videoId['id']);
+                }
+                while($videoId = mysqli_fetch_array($getVideoId));
+
+                $firstVideoQ = $db -> query("SELECT * FROM `videos` WHERE `id` = '$videoMass[1]'");
+                $firstVideo = mysqli_fetch_array($firstVideoQ);
+                $secondVideQ = $db -> query("SELECT * FROM `videos` WHERE `id` = '$videoMass[2]'");
+                $secondVideo = mysqli_fetch_array($secondVideQ);
+                $thirdVideQ = $db -> query("SELECT * FROM `videos` WHERE `id` = '$videoMass[3]'");
+                $thirdVideo = mysqli_fetch_array($thirdVideQ);
+                $fourthVideQ = $db -> query("SELECT * FROM `videos` WHERE `id` = '$videoMass[4]'");
+                $fourthVideo = mysqli_fetch_array($fourthVideQ);
+            ?>
             <div class="video_1">
-                <iframe src="https://vk.com/video_ext.php?oid=-84382652&id=456239085&hash=749e2371c582c698&hd=2" width="532" height="323" frameborder="0" allowfullscreen></iframe>
+                <?php echo $firstVideo['link']?>
             </div>
             <div class="video_2">
-                <iframe src="https://vk.com/video_ext.php?oid=177258358&id=456239352&hash=99fa1596f534f704&hd=2" width="532" height="323" frameborder="0" allowfullscreen></iframe>
+                <?php echo $secondVideo['link']?>
             </div>
             <div class="video_3">
-                <iframe src="https://vk.com/video_ext.php?oid=-84382652&id=456239083&hash=1bba4a62186ac9a7&hd=2" width="532" height="323" frameborder="0" allowfullscreen></iframe>
+                <?php echo $thirdVideo['link']?>
             </div>
             <div class="video_4">
-                <iframe src="https://vk.com/video_ext.php?oid=-84382652&id=456239079&hash=883033f72949282d&hd=2" width="532" height="323" frameborder="0" allowfullscreen></iframe>
+                <?php echo $fourthVideo['link']?>
             </div>
         </div>
+
+        <?php
+            if(isset($_SESSION['login']))
+            {
+                echo '<h4><a href="videoedit.php">Изменить видеоряд</a></h4>';
+            }
+        ?>
         <a href="https://vk.com/videos-84382652"class="btn1" style="color:black; margin-top: 44px;margin-left: 0;line-height: 25px;" >Больше видео</a>    
         </div>
     </div>
